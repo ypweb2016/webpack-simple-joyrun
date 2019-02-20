@@ -1,0 +1,15 @@
+{
+  "presets": [
+    ["env", { "modules": false }],
+    "stage-3"
+  ],
+  "plugins": [{{#if_eq componentLibrary "mintUi"}}
+    ["component", [
+      {
+        "libraryName": "mint-ui",
+        "style": true
+      }
+    ]]{{/if_eq}}{{#if_eq componentLibrary "vux"}}
+    "transform-runtime"{{/if_eq}}
+  ]
+}

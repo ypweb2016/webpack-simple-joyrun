@@ -1,0 +1,105 @@
+{
+  "prompts": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "label": "Project name"
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "label": "Project description",
+      "default": "Joyrun H5 activity"
+    },
+    "author": {
+      "type": "string",
+      "label": "Author"
+    },
+    "license": {
+      "type": "string",
+      "label": "License",
+      "default": "MIT"
+    },
+    "lint": {
+      "type": "confirm",
+      "message": "Use ESLint to lint your code?"
+    },
+    "lintConfig": {
+      "when": "lint",
+      "type": "list",
+      "message": "Pick an ESLint preset",
+      "choices": [
+        {
+          "name": "Standard (https://github.com/standard/standard)",
+          "value": "standard",
+          "short": "Standard"
+        }
+      ]
+    },
+    "shareHost": {
+      "type": "string",
+      "required": true,
+      "label": "share url host in wechat",
+      "default": "webevent.thejoyrun.com"
+    },
+    "cssPerprocessor": {
+      "type": "list",
+      "message": "Whether or not to use css perprocessor?",
+      "choices": [
+        {
+          "name": "yes, use less",
+          "value": "less",
+          "short": "less"
+        },
+        {
+          "name": "yes, use sass",
+          "value": "sass",
+          "short": "sass"
+        },
+        {
+          "name": "no",
+          "value": "none",
+          "short": "none"
+        }
+      ]
+    },
+    "componentLibrary": {
+      "type": "list",
+      "message": "Whether or not to use component library?",
+      "choices": [
+        {
+          "name": "yes, use vux",
+          "value": "vux",
+          "short": "vux"
+        },
+        {
+          "name": "yes, use mint-ui",
+          "value": "mintUi",
+          "short": "mintUi"
+        },
+        {
+          "name": "no",
+          "value": "none",
+          "short": "none"
+        }
+      ]
+    },
+    "animateType": {
+      "type": "list",
+      "message": "animation type when the router change",
+      "choices": [
+        {
+          "name": "fade (fade in and fade out)",
+          "value": "fade",
+          "short": "fade"
+        },
+        {
+          "name": "none (no animation)",
+          "value": "none",
+          "short": "none"
+        }
+      ]
+    }
+  },
+  "completeMessage": "{{#inPlace}}To get started:\n\n  npm install\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev{{/inPlace}}"
+}
